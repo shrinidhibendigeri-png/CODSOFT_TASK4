@@ -1,0 +1,997 @@
+/* =========================================
+   CineMatch - Movie Recommendation System
+   CODSOFT Task 4
+   ========================================= */
+
+
+/* ---------- GLOBAL ---------- */
+
+.stApp {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(124, 77, 255, 0.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(255, 75, 120, 0.12),
+            transparent 25%
+        ),
+        #090910;
+
+    color: #f5f5f7;
+}
+
+
+/* ---------- HIDE STREAMLIT UI ---------- */
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    background: transparent !important;
+}
+
+
+/* ---------- MAIN CONTAINER ---------- */
+
+.block-container {
+    max-width: 1150px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+
+/* ---------- HERO ---------- */
+
+.hero {
+    text-align: center;
+    padding: 55px 20px 45px 20px;
+    margin-bottom: 25px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #cfcfd8;
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 850;
+
+    letter-spacing: -3px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #cbbcff,
+        #ff9fbd
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin: 0;
+}
+
+.hero-subtitle {
+    color: #a5a5b2;
+    font-size: 19px;
+
+    max-width: 650px;
+    margin: 18px auto 0 auto;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- SECTION HEADINGS ---------- */
+
+.section-title {
+    font-size: 27px;
+    font-weight: 750;
+
+    margin-top: 32px;
+    margin-bottom: 7px;
+}
+
+.section-subtitle {
+    color: #8f8f9c;
+    font-size: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ---------- LABELS ---------- */
+
+label {
+    color: #dedee7 !important;
+    font-weight: 600 !important;
+}
+
+
+/* ---------- SELECT BOX ---------- */
+
+div[data-baseweb="select"] > div {
+    background: #171720 !important;
+
+    border: 1px solid #30303d !important;
+
+    border-radius: 13px !important;
+
+    min-height: 48px;
+}
+
+div[data-baseweb="select"] span {
+    color: #ffffff !important;
+}
+
+
+/* ---------- SLIDER ---------- */
+
+div[data-testid="stSlider"] {
+    padding-top: 10px;
+}
+
+
+/* ---------- BUTTON ---------- */
+
+.stButton > button {
+    width: 100%;
+
+    min-height: 54px;
+
+    border-radius: 14px;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7048ff,
+            #b247ff
+        );
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: 750;
+
+    box-shadow:
+        0 12px 30px rgba(112, 72, 255, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 16px 38px rgba(112, 72, 255, 0.4);
+}
+
+
+/* ---------- STAT CARDS ---------- */
+
+.stat-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    min-height: 100px;
+}
+
+.stat-number {
+    font-size: 29px;
+    font-weight: 850;
+
+    color: #ffffff;
+}
+
+.stat-label {
+    color: #8f8f9c;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+
+/* ---------- MOVIE CARDS ---------- */
+
+.movie-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(28, 28, 40, 0.96),
+            rgba(15, 15, 23, 0.96)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    padding: 26px;
+
+    margin: 16px 0;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(150, 120, 255, 0.35);
+}
+
+
+/* ---------- MOVIE RANK ---------- */
+
+.movie-rank {
+    color: #a697ff;
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+
+/* ---------- MOVIE TITLE ---------- */
+
+.movie-title {
+    color: #ffffff;
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    margin-bottom: 13px;
+}
+
+
+/* ---------- GENRE BADGES ---------- */
+
+.genre-badge {
+    display: inline-block;
+
+    padding: 6px 11px;
+
+    margin:
+        3px
+        5px
+        5px
+        0;
+
+    border-radius: 20px;
+
+    background:
+        rgba(124, 77, 255, 0.13);
+
+    border:
+        1px solid
+        rgba(124, 77, 255, 0.28);
+
+    color: #cfc4ff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ---------- MOVIE DETAILS ---------- */
+
+.movie-meta {
+    color: #a4a4b0;
+
+    font-size: 14px;
+
+    margin-top: 10px;
+
+    line-height: 1.6;
+}
+
+
+/* ---------- MATCH SCORE ---------- */
+
+.match-score {
+    display: inline-block;
+
+    margin-top: 18px;
+
+    padding: 9px 14px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 750;
+}
+
+
+/* ---------- TOP MATCH ---------- */
+
+.top-match {
+    display: inline-block;
+
+    margin-left: 8px;
+
+    padding: 5px 11px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffbd59,
+            #ff7b7b
+        );
+
+    color: #181818;
+
+    font-size: 11px;
+
+    font-weight: 850;
+}
+
+
+/* ---------- INFO SECTION ---------- */
+
+.info-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.02)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    margin-top: 35px;
+}
+
+.info-title {
+    color: #ffffff;
+
+    font-size: 21px;
+
+    font-weight: 750;
+
+    margin-bottom: 12px;
+}
+
+.info-text {
+    color: #9999a7;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.custom-footer {
+    text-align: center;
+
+    color: #6f6f7c;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    padding:
+        40px
+        0
+        15px
+        0;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 768px) {
+
+    .hero-title {
+        font-size: 45px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .movie-title {
+        font-size: 22px;
+    }
+
+}
+
+/* =========================================================
+   PREMIUM CINEMATIC POLISH
+   ========================================================= */
+
+/* Smooth overall typography */
+.stApp {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+.stApp::before {
+    content: "";
+    position: fixed;
+
+    width: 650px;
+    height: 650px;
+
+    top: -250px;
+    left: -220px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(124, 77, 255, 0.16),
+            transparent 68%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.stApp::after {
+    content: "";
+
+    position: fixed;
+
+    width: 600px;
+    height: 600px;
+
+    right: -220px;
+    bottom: -250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 80, 130, 0.12),
+            transparent 68%
+        );
+
+    filter: blur(35px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.hero-title {
+    text-shadow:
+        0 0 35px rgba(180, 140, 255, 0.20);
+}
+
+
+
+.hero-badge {
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.hero-badge:hover {
+    transform: translateY(-2px);
+
+    border-color:
+        rgba(190, 160, 255, 0.35);
+}
+
+
+.stat-card {
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(160, 130, 255, 0.28);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+
+.movie-card {
+    position: relative;
+
+    overflow: hidden;
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.movie-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8b5cff,
+            #ff7baa
+        );
+
+    opacity: 0.75;
+}
+
+
+.movie-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.30);
+
+    border-color:
+        rgba(160, 130, 255, 0.32);
+}
+
+
+.movie-title {
+    letter-spacing: -0.5px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.movie-card:hover .movie-title {
+    color: #d8cbff;
+}
+
+
+.genre-badge {
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.genre-badge:hover {
+    transform: translateY(-2px);
+
+    background:
+        rgba(124, 77, 255, 0.22);
+}
+
+
+.top-match {
+    box-shadow:
+        0 5px 18px rgba(255, 175, 80, 0.18);
+
+    animation:
+        subtleGlow 2.5s ease-in-out infinite;
+}
+
+
+@keyframes subtleGlow {
+
+    0% {
+        box-shadow:
+            0 5px 18px rgba(255, 175, 80, 0.12);
+    }
+
+    50% {
+        box-shadow:
+            0 5px 25px rgba(255, 175, 80, 0.28);
+    }
+
+    100% {
+        box-shadow:
+            0 5px 18px rgba(255, 175, 80, 0.12);
+    }
+
+}
+
+
+.match-score {
+    backdrop-filter: blur(8px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+
+    transition:
+        transform 0.2s ease;
+}
+
+.movie-card:hover .match-score {
+    transform: translateX(4px);
+}
+
+
+.stButton > button {
+    position: relative;
+
+    overflow: hidden;
+
+    letter-spacing: 0.2px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.stButton > button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 80%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.20),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 0.6s ease;
+}
+
+
+.stButton > button:hover::before {
+    left: 130%;
+}
+
+
+.info-card {
+    backdrop-filter: blur(15px);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.info-card:hover {
+    border-color:
+        rgba(160, 130, 255, 0.25);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.20);
+}
+
+
+
+div[data-testid="stSlider"] [role="slider"] {
+    box-shadow:
+        0 0 12px rgba(255, 80, 100, 0.40);
+}
+
+
+
+.custom-footer {
+    opacity: 0.85;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+
+    margin-top: 45px;
+}
+
+
+.taste-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.12),
+            rgba(255, 100, 150, 0.06)
+        );
+
+    border: 1px solid rgba(160, 130, 255, 0.18);
+
+    border-radius: 18px;
+
+    padding: 20px 24px;
+
+    margin: 25px 0;
+
+    backdrop-filter: blur(15px);
+}
+
+.taste-label {
+    color: #9999a7;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+}
+
+.taste-movie {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    margin-top: 5px;
+}
+
+.taste-genres {
+    color: #bdb0ff;
+
+    font-size: 14px;
+
+    margin-top: 7px;
+}
+
+
+/* Featured top recommendation */
+.featured-card {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(124, 77, 255, 0.18),
+            rgba(255, 80, 130, 0.09),
+            rgba(20, 20, 30, 0.96)
+        );
+
+    border:
+        1px solid
+        rgba(180, 150, 255, 0.30);
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    margin: 20px 0 25px 0;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.28);
+}
+
+.featured-label {
+    color: #c5b6ff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+}
+
+.featured-title {
+    color: #ffffff;
+
+    font-size: 32px;
+
+    font-weight: 850;
+
+    margin-top: 8px;
+}
+
+.featured-description {
+    color: #a8a8b5;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-top: 10px;
+}
+
+
+/* Similarity bar */
+.similarity-container {
+    margin-top: 18px;
+}
+
+.similarity-label {
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #b8b8c5;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+.similarity-track {
+    width: 100%;
+
+    height: 8px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.similarity-fill {
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7048ff,
+            #c14cff,
+            #ff719f
+        );
+}
+
+
+/* AI workflow */
+.workflow {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    padding: 14px 17px;
+
+    text-align: center;
+
+    min-width: 125px;
+}
+
+.workflow-icon {
+    font-size: 22px;
+}
+
+.workflow-name {
+    color: #d0d0da;
+
+    font-size: 12px;
+
+    font-weight: 650;
+
+    margin-top: 5px;
+}
+
+.workflow-arrow {
+    color: #8f78ff;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+
+/* Mobile workflow */
+@media (max-width: 700px) {
+
+    .workflow-arrow {
+        display: none;
+    }
+
+    .workflow-step {
+        width: 45%;
+    }
+
+    .featured-title {
+        font-size: 25px;
+    }
+
+}
