@@ -1,59 +1,55 @@
-# 🎬 Movie Recommendation System
+# 🎬 CineMatch — Movie Recommendation System
 
-## CODSOFT Internship - Task 4
+### CODSOFT Internship — Task 4
 
-A simple movie recommendation system built using Python and content-based filtering.
+CineMatch is a content-based movie recommendation system that suggests movies based on the user's selected movie and optional genre preferences.
 
-## 📌 Project Overview
+The system uses **TF-IDF Vectorization** and **Cosine Similarity** to analyze movie information and find similar movies.
 
-This project recommends movies to users based on their movie preferences.
-
-The system analyzes movie information such as:
-
-- Genres
-- Keywords
-- Cast
-
-It then recommends movies that are most similar to the movie selected by the user.
-
-## 🧠 Recommendation Technique
-
-This project uses **Content-Based Filtering**.
-
-The recommendation process works as follows:
-
-1. Movie information is combined into a single text feature.
-2. TF-IDF Vectorization converts the text into numerical vectors.
-3. Cosine Similarity calculates the similarity between movies.
-4. Movies with the highest similarity scores are recommended to the user.
-5. User-selected genres provide an additional preference boost.
-
-## ⚙️ Technologies Used
-
-- Python
-- Pandas
-- Scikit-learn
-- Streamlit
-- TF-IDF
-- Cosine Similarity
+---
 
 ## ✨ Features
 
-- Select a movie you like
-- Select favourite genres
-- Choose the number of recommendations
-- Get personalized movie recommendations
-- View movie genres and cast
-- View similarity scores
-- Interactive web interface using Streamlit
+- 🎬 Select a movie you already like
+- ❤️ Choose optional preferred genres
+- 🍿 Get personalized movie recommendations
+- 🏆 Highlight the top recommendation
+- 📊 View similarity percentages
+- 🎭 View movie genres and cast
+- 🔍 View movie keywords
+- 🧠 Visual explanation of the recommendation process
+- 🎨 Modern cinematic user interface
+- ⚡ Instant recommendations using Streamlit
 
-## 📂 Project Structure
+---
+
+## 🖥️ Application Preview
+
+### Home Screen
+
+![CineMatch Home](screenshots/home.png)
+
+### Recommendations
+
+![CineMatch Recommendations](screenshots/recommendations.png)
+
+---
+
+## 🧠 How It Works
+
+CineMatch uses **Content-Based Filtering**.
+
+The system follows these steps:
 
 ```text
-CODSOFT_TASK4/
-│
-├── app.py
-├── movies.csv
-├── requirements.txt
-├── README.md
-└── .gitignore
+             🎬 User Selects Movie
+                       ↓
+              🔤 Movie Features
+                       ↓
+              🧮 TF-IDF Vectorization
+                       ↓
+              📐 Cosine Similarity
+                       ↓
+              📊 Similarity Ranking
+                       ↓
+               🍿 Recommendations
